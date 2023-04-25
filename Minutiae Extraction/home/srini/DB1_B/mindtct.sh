@@ -6,7 +6,6 @@ for TIF in *.tif
 do
     echo "Converting $TIF to $HOMEPATH/${TIF%.*}.jpg"
     convert "$TIF" -colorspace gray "$HOMEPATH/${TIF%.*}.jpg"
-    rm "$TIF"
 done
 
 for PIC in $PHOTOTYPE
