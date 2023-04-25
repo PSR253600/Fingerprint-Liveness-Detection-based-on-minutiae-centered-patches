@@ -6,7 +6,7 @@ Determines whether a fingerprint is live or fake with trained models
 **OS used:** Ubuntu 20.04.6 LTS
 
 **Process Workflow:**
-1. Minutiae extraction
+1. Minutiae extraction and Fingerprint matching
 2. Minutiae-centered patch extraction
 3. Quality feature extraction
 4. Training the ML models
@@ -26,3 +26,7 @@ _sudo make config_, _sudo make it_ and _make install LIBNBIS=yes_
 8. To extract minutiae from a single fingerprint image, execute the command _/home/NBIS_Tool/bin/mindtct [Path to the fingerprint image] [Path to the output folder followed by a '/' and name of the files]_. Make sure that the fingerprint image is a grayscale jpg image, since the software doesn't support any other image formats.
 9. To extract minutiae from all fingerprint images of a folder, execute the mindtct.sh file after making the required changes in that mindtct.sh file preceeded by the execution of the command _chmod +x mindtct.sh_ in the terminal.
 10. The .xyt files in the output folder contain the information about the minutiae points of a particular fingerprint image i.e., x co-ordinate, y co-ordinate, orientation angle and quality score.
+
+**Fingerprint matching:**
+1. Execute the command _/home/srini/NBIS_Tool/bin/bozorth3 -m1 [Path to the .xyt file of a fingerprint image] [Path to the .xyt file of another fingerprint image]_
+2. It gives out the matching score of both fingerprints.
